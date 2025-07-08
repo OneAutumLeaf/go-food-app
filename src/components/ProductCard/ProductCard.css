@@ -1,0 +1,139 @@
+/* src/components/ProductCard/ProductCard.css */
+
+/* --- DESKTOP STYLES (UNCHANGED) --- */
+/* Main container for the card */
+.product-card {
+  display: flex;
+  align-items: center; /* Vertically align image and info block */
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Circular image on the left */
+.product-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+
+  /* Uplift effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* Optional: add hover effect for interactivity */
+.product-image:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for the top and bottom rows */
+.product-top-row,
+.product-bottom-row {
+  display: flex;
+  justify-content: space-between; /* Pushes items to opposite ends */
+  align-items: center; /* Aligns them vertically */
+  gap: 1rem; /* Space between items if they get close */
+}
+
+/* Style for the product name */
+.product-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  text-align: left;
+}
+
+/* Style for the price */
+.product-price {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #36533c; /* Using the green from your theme */
+  white-space: nowrap; /* Prevents the price from wrapping */
+}
+
+/* The dotted line separator */
+.dotted-divider {
+  border-bottom: 2px dashed var(--border-color, #c8c8c8);
+  margin: 0.75rem 0; /* Space above and below the line */
+}
+
+/* Style for the description text */
+.product-desc {
+  color: var(--light-text, #817f7f);
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+
+/* Style for the "SHOP NOW" link */
+.product-shop-link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  color: #36533C;
+  text-decoration: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+
+/* 
+  --- ULTRA-COMPACT MOBILE STYLES --- 
+  Apply these styles on screens 480px wide or less 
+*/
+@media (max-width: 480px) {
+  .product-card {
+    gap: 0.6rem; /* Minimal gap */
+  }
+
+  .product-image {
+    width: 50px; /* Very small image */
+    height: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(0); /* Remove lift effect on mobile to save space */
+  }
+  
+  .product-image:hover {
+    transform: translateY(0); /* Disable hover lift on mobile */
+  }
+
+  .product-name {
+    font-size: 0.75rem; /* Smallest legible name size */
+  }
+
+  .product-price {
+    font-size: 0.75rem; /* Smallest legible price size */
+  }
+
+  .dotted-divider {
+    margin: 0.3rem 0; /* Minimal space around the line */
+  }
+  
+  .product-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem; /* Minimal gap between description and link */
+  }
+
+  .product-desc {
+    width: 100%;
+    font-size: 0.55rem; /* Very small description text */
+  }
+
+  .product-shop-link {
+    font-size: 0.6rem; /* Very small shop link */
+  }
+}
