@@ -1,14 +1,11 @@
 /* src/components/TopSection/TopSection.css */
 .top-section {
-  /* This creates a background that is cream for the first 60% and green for the rest */
+  
   background: linear-gradient(to right, 
     var(--light-cream) 0%, 
     var(--light-cream) 60%, 
     var(--primary-green) 60%, 
     var(--primary-green) 100%
   );
-  /* Ensures content inside doesn't overflow improperly */
-  /* overflow: hidden; */
-  /* padding-top: 50px; */
   height: 42rem;
 }

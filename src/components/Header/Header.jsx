@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      {/* --- LOGO (Always Visible) --- */}
+    
       <div className="header-left">
         <h1 className="logo">
           <span className="logo-light">GO</span>
@@ -19,14 +19,12 @@ const Header = () => {
         </h1>
       </div>
 
-      {/* --- DESKTOP NAVIGATION (will be hidden on mobile) --- */}
       <nav className="nav-menu desktop-only">
         <a href="#">Home<span className="arrow"><BsChevronDown/></span></a>
         <a href="#">Groceries<span className="arrow"><BsChevronDown/></span></a>
         <a href="#">Pages<span className="arrow"><BsChevronDown/></span></a>
       </nav>
 
-      {/* --- DESKTOP RIGHT SIDE (will be hidden on mobile) --- */}
       <div className="header-right desktop-only">
         <a href="#" className="connect-link">Connect with us →</a>
         <div className="icon-group">
@@ -43,12 +41,12 @@ const Header = () => {
         </div>
       </div>
 
-      {/* --- MOBILE MENU TOGGLE (only visible on mobile) --- */}
+      
       <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      {/* --- MOBILE MENU OVERLAY --- */}
+    
       <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
         <nav className="mobile-nav-menu">
           <a href="#" onClick={toggleMobileMenu}>Home</a>

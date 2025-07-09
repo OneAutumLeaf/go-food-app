@@ -1,4 +1,4 @@
-/* src/components/SkeletonCard/SkeletonCard.css */
+
 .skeleton-card {
   display: flex;
   align-items: center;
@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 
-/* Shimmer animation */
+
 .skeleton::after {
   content: '';
   position: absolute;

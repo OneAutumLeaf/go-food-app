@@ -1,4 +1,4 @@
-/* src/components/Hero/Hero.css */
+
 
 .hero-section {
   display: flex;
@@ -83,9 +83,9 @@
   transform: translateY(-50px);
 }
 
-/* Updated style for the inline image */
+
 .inline-heading-image {
-  height: 4.5rem; /* <-- INCREASED SIZE */
+  height: 4.5rem; 
   width: auto;
   vertical-align: middle;
   margin-left: 0.5rem;
@@ -96,7 +96,7 @@
   transform: rotate(20deg);
 }
 
-/* --- MOBILE RESPONSIVE STYLES --- */
+
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
@@ -132,7 +132,7 @@
     max-width: 200px;
     margin: 0 auto;
   }
-  /* Also adjust the inline image size for mobile */
+
   .inline-heading-image {
     height: 2.5rem;
   }

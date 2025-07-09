@@ -1,4 +1,4 @@
-// src/components/ProductSection/ProductSection.jsx
+
 import React, { useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import SkeletonCard from '../SkeletonCard/SkeletonCard';
@@ -21,9 +21,9 @@ const ProductSection = ({ categories, selectedCategory, onSelectCategory, meals,
         <h2>Top Category Of Organic Food</h2>
       </div>
 
-      {/* 1. Add the new wrapper container */}
+  
       <div className="filters-container">
-        {/* --- Desktop Filters (Horizontal Buttons) --- */}
+
         <div className="desktop-filters">
           {categories.map((category) => (
             <button
@@ -36,7 +36,7 @@ const ProductSection = ({ categories, selectedCategory, onSelectCategory, meals,
           ))}
         </div>
 
-        {/* --- Mobile Filters (Dropdown) --- */}
+
         <div className="mobile-filters">
           <div className="dropdown-container">
             <button

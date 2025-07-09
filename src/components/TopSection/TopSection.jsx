@@ -1,6 +1,6 @@
-// src/components/TopSection/TopSection.jsx
+
 import React from 'react';
-import Header from '../Header/Header'; // Adjust path if they are in different folders
+import Header from '../Header/Header'; 
 import Hero from '../Hero/Hero';
 import './TopSection.css';
 
