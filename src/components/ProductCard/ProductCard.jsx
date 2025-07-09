@@ -23,7 +23,7 @@ const ProductCard = ({ meal }) => {
         {/* --- Bottom Row: Contains Description and Shop Link --- */}
         <div className="product-bottom-row">
           <p className="product-desc">Lorem ipsum dolor sit amet quam in lacus risus.</p>
-          <a href="#" className="product-shop-link">SHOP NOW -→</a>
+          <a href="#" className="product-shop-link">SHOP NOW →</a>
         </div>
 
       </div>
