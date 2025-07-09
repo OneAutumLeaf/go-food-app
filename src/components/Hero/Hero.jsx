@@ -2,13 +2,17 @@
 import React from 'react';
 import './Hero.css';
 import heroImage from '../../assets/hero-bowl5.png';
+import heroImage0 from '../../assets/hero-fr.png';
 
 const Hero = () => {
   return (
     <section className="hero-section">
       <div className="hero-content">
         <p className="discount">Discount up to 20%</p>
-        <h1>Buy Fresh And Organic Grocery Food</h1>
+         <h1>
+          Buy Fresh And Organic Grocery Food 
+          <img src={heroImage0} alt="fruit slice" className="inline-heading-image" />
+        </h1>
         <p className="description">
           Lorem ipsum dolor sit amet consectetur. Condimentum sed sed blandit purus nec nibh tortor ipsum.
         </p>
