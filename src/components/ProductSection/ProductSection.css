@@ -74,35 +74,43 @@
 @media (max-width: 768px) {
   .product-list {
     grid-template-columns: 1fr;
+    /* CHANGE 1: Add some top margin to create controlled space */
+    margin-top: 2rem; 
   }
 
-  /* 
-    STEP 2: Make the desktop filters invisible but keep their layout space.
-    This is the key to preventing the layout jump.
-  */
+  /* Make the desktop filters invisible but keep their layout space. */
   .desktop-filters {
     opacity: 0;
-    pointer-events: none; /* Makes the invisible buttons unclickable */
+    pointer-events: none;
   }
 
   /* 
-    STEP 3: Display the mobile filters and position them absolutely
-    on top of the invisible desktop filters.
+    --- CHANGE #2: THIS IS THE KEY FIX ---
+    Give the container a fixed, small height on mobile. This overrides the
+    large height created by the invisible desktop buttons.
   */
+  .filters-container {
+    height: 50px; /* Set a fixed height */
+    margin-bottom: 0; /* Remove the large bottom margin */
+  }
+
+  /* Display the mobile filters and position them absolutely */
   .mobile-filters {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Cover the entire container area */
+    height: 100%;
   }
 
   .dropdown-container {
     position: relative;
-    max-width: 150px;
+    max-width: 180px; /* Increased slightly for better look */
     margin: 0 auto;
   }
+
+  /* (The rest of your dropdown styles remain the same) */
   .dropdown-toggle {
     width: 100%;
     padding: 0.8rem 1.2rem;
@@ -141,7 +149,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     z-index: 100;
     text-align: left;
-    
   }
   .dropdown-item {
     padding: 0.8rem 1.2rem;
