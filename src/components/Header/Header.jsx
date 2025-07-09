@@ -1,23 +1,33 @@
 // src/components/Header/Header.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import { IoSearch } from "react-icons/io5";
-import { FaRegUser, FaRegHeart } from "react-icons/fa";
-import { BsCart2 } from "react-icons/bs";
-
+import { FaRegUser, FaRegHeart, FaBars, FaTimes } from "react-icons/fa";
+import { BsCart2, BsChevronDown } from "react-icons/bs";
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
   return (
     <header className="header">
+      {/* --- LOGO (Always Visible) --- */}
       <div className="header-left">
-        <h1 className="logo">GO FOOD</h1>
-        <nav className="nav-menu">
-          <a href="#">Home<span className="arrow">▾</span></a>
-          <a href="#">Groceries<span className="arrow">▾</span></a>
-          <a href="#">Pages<span className="arrow">▾</span></a>
-        </nav>
+        <h1 className="logo">
+          <span className="logo-light">GO</span>
+          <span className="logo-bold"> FOOD</span>
+        </h1>
       </div>
-      <div className="header-right">
+
+      {/* --- DESKTOP NAVIGATION (will be hidden on mobile) --- */}
+      <nav className="nav-menu desktop-only">
+        <a href="#">Home<span className="arrow"><BsChevronDown/></span></a>
+        <a href="#">Groceries<span className="arrow"><BsChevronDown/></span></a>
+        <a href="#">Pages<span className="arrow"><BsChevronDown/></span></a>
+      </nav>
+
+      {/* --- DESKTOP RIGHT SIDE (will be hidden on mobile) --- */}
+      <div className="header-right desktop-only">
         <a href="#" className="connect-link">Connect with us →</a>
         <div className="icon-group">
           <div className="icon-wrapper"><IoSearch /></div>
@@ -29,6 +39,29 @@ const Header = () => {
           <div className="icon-wrapper">
             <BsCart2 />
             <span className="notification-badge empty">0</span>
+          </div>
+        </div>
+      </div>
+
+      {/* --- MOBILE MENU TOGGLE (only visible on mobile) --- */}
+      <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+        {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
+      {/* --- MOBILE MENU OVERLAY --- */}
+      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+        <nav className="mobile-nav-menu">
+          <a href="#" onClick={toggleMobileMenu}>Home</a>
+          <a href="#" onClick={toggleMobileMenu}>Groceries</a>
+          <a href="#" onClick={toggleMobileMenu}>Pages</a>
+        </nav>
+        <div className="mobile-header-right">
+          <a href="#" className="connect-link-mobile" onClick={toggleMobileMenu}>Connect with us →</a>
+          <div className="icon-group-mobile">
+            <div className="icon-wrapper-mobile"><IoSearch /><span>Search</span></div>
+            <div className="icon-wrapper-mobile"><FaRegUser /><span>Account</span></div>
+            <div className="icon-wrapper-mobile"><FaRegHeart /><span>Wishlist</span></div>
+            <div className="icon-wrapper-mobile"><BsCart2 /><span>Cart</span></div>
           </div>
         </div>
       </div>

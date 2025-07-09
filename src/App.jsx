@@ -1,8 +1,7 @@
 // src/App.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
+import TopSection from './components/TopSection/TopSection';
 import ProductSection from './components/ProductSection/ProductSection';
 import './App.css';
 
@@ -54,18 +53,17 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="main-content">
-          <Header />
-          <Hero />
-          <ProductSection
-            categories={categories}
-            selectedCategory={selectedCategory}
-            onSelectCategory={handleSelectCategory}
-            meals={meals}
-            loading={loading}
-          />
-      </div>
+     <div className="App">
+      {/* Replace Header and Hero with the new TopSection */}
+      <TopSection />
+      
+      <ProductSection
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onSelectCategory={handleSelectCategory}
+        meals={meals}
+        loading={loading}
+      />
     </div>
   );
 }

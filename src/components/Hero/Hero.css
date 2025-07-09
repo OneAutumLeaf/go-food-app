@@ -1,10 +1,11 @@
 /* src/components/Hero/Hero.css */
+
+/* --- DESKTOP STYLES (Your existing code) --- */
 .hero-section {
   display: flex;
   align-items: center;
   padding: 2rem 5%;
-  background-color: var(--light-cream);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .hero-content {
   flex: 1;
@@ -19,11 +20,13 @@
   font-size: 3.5rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+  transition: font-size 0.3s ease; /* Add transition for smooth resizing */
 }
 .description {
   color: var(--light-text);
   margin-bottom: 2rem;
   max-width: 450px;
+  text-align: justify;
 }
 .hero-actions {
   display: flex;
@@ -40,10 +43,29 @@
   cursor: pointer;
   font-size: 1rem;
 }
+
 .stats {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 4rem; 
+  margin-left: 10rem;
 }
+
+.stat-item:first-child {
+  position: relative;
+}
+
+.stat-item:first-child::after {
+  content: '';
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 70%;
+  background-color: var(--border-color, #e0e0e0);
+}
+
 .stat-item {
   display: flex;
   flex-direction: column;
@@ -54,27 +76,79 @@
 }
 .stat-label {
   color: var(--light-text);
+  font-size: 0.9rem;
 }
 .hero-image-container {
   flex: 1;
   position: relative;
 }
-.hero-image-container::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  padding-bottom: 100%; /* Creates a circle */
-  background-color: var(--primary-green);
-  border-radius: 50%;
-  z-index: 0;
-}
+
 .hero-image {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  border-radius: 50%;
+  max-width: 650px;
   z-index: 1;
+  transform: translateY(-50px);
+  transition: transform 0.3s ease, max-width 0.3s ease; /* Smooth transition */
+}
+
+
+/* 
+  --- MOBILE RESPONSIVE STYLES ---
+  Apply these styles on screens 768px wide or less
+*/
+@media (max-width: 768px) {
+  /* Stack the main columns vertically and center-align text */
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 1rem; /* Reduce top padding */
+  }
+
+  /* Center the content and remove side padding */
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 3rem; /* Add space between text block and image */
+  }
+
+  /* Make the main heading smaller */
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Make the description centered */
+  .description {
+    text-align: center;
+    max-width: 100%; /* Allow description to use full width */
+  }
+  
+  /* Stack the button and stats vertically and center them */
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* Reset stats positioning for mobile */
+  .stats {
+    margin-left: 0;
+    gap: 3rem; /* Reduce the gap between stats */
+    justify-content: center;
+  }
+  
+  /* Reposition the vertical line for the new gap */
+  .stat-item:first-child::after {
+    right: -1.5rem; /* Half of the new 3rem gap */
+  }
+
+  /* Reset the image position and size for a standard mobile layout */
+  .hero-image {
+    transform: translateY(0); /* Remove the upward shift */
+    margin: 0 auto; /* Ensure it's centered */
+
+    /* --- THIS IS THE CHANGED LINE --- */
+    /* Set a smaller max-width to reduce the image size on mobile */
+    max-width: 250px;
+  
+  }
 }

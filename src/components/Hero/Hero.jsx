@@ -1,7 +1,7 @@
 // src/components/Hero/Hero.jsx
 import React from 'react';
 import './Hero.css';
-import heroImage from '../../assets/hero-bowl.png'; 
+import heroImage from '../../assets/hero-bowl5.png';
 
 const Hero = () => {
   return (
@@ -16,11 +16,11 @@ const Hero = () => {
           <button className="shop-now-btn">SHOP NOW →</button>
           <div className="stats">
             <div className="stat-item">
-              <span className="stat-number">35k+</span>
+              <span className="stat-number">35k + </span>
               <span className="stat-label">Users</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">18k+</span>
+              <span className="stat-number">18k +</span>
               <span className="stat-label">Products</span>
             </div>
           </div>

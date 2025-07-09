@@ -50,20 +50,20 @@
   transition: all 0.3s ease;
 }
 .category-btn:hover {
-  background-color: #36533c;
+  background-color: #44684b;
   color: white;
-  border-color: #36533c;
+  border-color: #44684b;
 }
 .category-btn.active {
-  background-color: #36533c;
+  background-color: #44684b;
   color: white;
-  border-color: #36533c;
+  border-color: #44684b;
 }
 
 .product-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 2rem;
+  gap: 2rem 4rem;
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 0.5rem;
@@ -118,7 +118,7 @@
     align-items: center;
   }
   .arrow {
-    border: solid #333;
+    border: solid #44684b;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
